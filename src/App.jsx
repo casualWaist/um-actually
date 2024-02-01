@@ -1,4 +1,4 @@
-import {useMemo, useState} from 'react'
+import { useState } from 'react'
 import { Canvas } from "@react-three/fiber"
 import {Center, DeviceOrientationControls, OrbitControls} from "@react-three/drei"
 import { UmActuallyWeb } from "./UmActuallyWeb.jsx"
@@ -7,6 +7,8 @@ import {useMediaQuery} from "react-responsive"
 export default function App() {
 
   const [ cameraPosition ] = useState(Math.floor(Math.random() * 5))
+
+  // if mobile, enable device orientation to control the camera
   const isMobile = useMediaQuery({ query: 'only screen and (max-width: 768px)' })
   console.log("isMobile", isMobile)
 
